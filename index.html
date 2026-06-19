@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Ruan Hattingh Portfolio Admin</title>
+
+  <link rel="stylesheet" href="CSS/styles.css" />
+</head>
+
+<body>
+
+  <main class="admin-wrapper">
+
+    <section class="admin-header">
+      <h1>Portfolio Admin Dashboard</h1>
+      <p id="admin-status">Please log in to manage your projects.</p>
+    </section>
+
+    <!-- LOGIN SECTION -->
+    <section id="login-section" class="admin-card">
+      <h2>Admin Login</h2>
+
+      <form id="login-form">
+        <label for="admin-email">Email</label>
+        <input
+          type="email"
+          id="admin-email"
+          placeholder="Enter your admin email"
+          required
+        />
+
+        <label for="admin-password">Password</label>
+        <input
+          type="password"
+          id="admin-password"
+          placeholder="Enter your password"
+          required
+        />
+
+        <button type="submit">Log In</button>
+      </form>
+    </section>
+
+    <!-- DASHBOARD SECTION -->
+    <section id="dashboard-section" style="display: none;">
+
+      <div class="top-actions">
+        <button id="logout-button" type="button" class="secondary-button">
+          Log Out
+        </button>
+      </div>
+
+      <!-- ADD / EDIT PROJECT FORM -->
+      <section class="admin-card">
+        <h2 id="project-form-title">Add New Project</h2>
+
+        <form id="project-form">
+          <input type="hidden" id="project-id" />
+
+          <label for="project-title">Project Title</label>
+          <input
+            type="text"
+            id="project-title"
+            placeholder="Example: PowerWatchSA"
+            required
+          />
+
+          <label for="project-description">Project Description</label>
+          <textarea
+            id="project-description"
+            rows="6"
+            placeholder="Describe what this project does..."
+            required
+          ></textarea>
+
+          <label for="project-technologies">Technologies</label>
+          <input
+            type="text"
+            id="project-technologies"
+            placeholder="HTML, CSS, JavaScript, Supabase"
+            required
+          />
+
+          <label for="project-live-url">Live Website URL</label>
+          <input
+            type="url"
+            id="project-live-url"
+            placeholder="https://example.com"
+          />
+
+          <label for="project-source-url">Source Code URL</label>
+          <input
+            type="url"
+            id="project-source-url"
+            placeholder="https://github.com/username/repository"
+          />
+
+          <label for="project-display-order">Display Order</label>
+          <input
+            type="number"
+            id="project-display-order"
+            min="0"
+            value="0"
+            required
+          />
+
+          <div class="checkbox-row">
+            <label>
+              <input type="checkbox" id="project-featured" />
+              Featured project
+            </label>
+          </div>
+
+          <div class="checkbox-row">
+            <label>
+              <input type="checkbox" id="project-published" checked />
+              Published on portfolio
+            </label>
+          </div>
+
+          <button type="submit">Save Project</button>
+
+          <button
+            type="button"
+            id="cancel-edit-button"
+            class="secondary-button"
+            style="display: none;"
+          >
+            Cancel Edit
+          </button>
+        </form>
+      </section>
+
+      <!-- EXISTING PROJECTS -->
+      <section class="admin-card">
+        <h2>Existing Projects</h2>
+        <div id="projects-list">
+          <p>Loading projects...</p>
+        </div>
+      </section>
+
+    </section>
+
+  </main>
+
+  <!-- Supabase JavaScript Client -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <!-- Admin JavaScript -->
+  <script src="JS/admin.js"></script>
+
+</body>
+</html>
