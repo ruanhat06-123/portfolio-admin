@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Projects Admin - Ruan Hattingh Portfolio</title>
+  <title>Testimonials Admin - Ruan Hattingh Portfolio</title>
 
   <link rel="stylesheet" href="CSS/styles.css" />
 </head>
@@ -12,15 +12,15 @@
 <body>
 
   <nav class="admin-navbar">
-    <a href="index.html" class="active-admin-link">Projects</a>
-    <a href="testimonials.html">Testimonials</a>
+    <a href="index.html">Projects</a>
+    <a href="testimonials.html" class="active-admin-link">Testimonials</a>
   </nav>
 
   <main class="admin-wrapper">
 
     <section class="admin-header">
-      <h1>Projects Admin</h1>
-      <p id="admin-status">Please log in to manage your projects.</p>
+      <h1>Testimonials Admin</h1>
+      <p id="admin-status">Please log in to manage your testimonials.</p>
     </section>
 
     <!-- LOGIN SECTION -->
@@ -57,55 +57,40 @@
         </button>
       </div>
 
-      <!-- ADD / EDIT PROJECT FORM -->
+      <!-- ADD / EDIT TESTIMONIAL FORM -->
       <section class="admin-card">
-        <h2 id="project-form-title">Add New Project</h2>
+        <h2 id="testimonial-form-title">Add New Testimonial</h2>
 
-        <form id="project-form">
-          <input type="hidden" id="project-id" />
+        <form id="testimonial-form">
+          <input type="hidden" id="testimonial-id" />
 
-          <label for="project-title">Project Title</label>
+          <label for="testimonial-author-name">Author</label>
           <input
             type="text"
-            id="project-title"
-            placeholder="Example: PowerWatchSA"
+            id="testimonial-author-name"
+            placeholder="Example: John Smith"
             required
           />
 
-          <label for="project-description">Project Description</label>
+          <label for="testimonial-author-role">Project Name</label>
+          <input
+            type="text"
+            id="testimonial-author-role"
+            placeholder="Example: Website Client"
+          />
+
+          <label for="testimonial-quote">Author Comments</label>
           <textarea
-            id="project-description"
+            id="testimonial-quote"
             rows="6"
-            placeholder="Describe what this project does..."
+            placeholder="Write the testimonial here..."
             required
           ></textarea>
 
-          <label for="project-technologies">Technologies</label>
-          <input
-            type="text"
-            id="project-technologies"
-            placeholder="HTML, CSS, JavaScript, Supabase"
-            required
-          />
-
-          <label for="project-live-url">Live Website URL</label>
-          <input
-            type="url"
-            id="project-live-url"
-            placeholder="https://example.com"
-          />
-
-          <label for="project-source-url">Source Code URL</label>
-          <input
-            type="url"
-            id="project-source-url"
-            placeholder="https://github.com/username/repository"
-          />
-
-          <label for="project-display-order">Display Order</label>
+          <label for="testimonial-display-order">Display Order</label>
           <input
             type="number"
-            id="project-display-order"
+            id="testimonial-display-order"
             min="1"
             value="1"
             required
@@ -113,23 +98,16 @@
 
           <div class="checkbox-row">
             <label>
-              <input type="checkbox" id="project-featured" />
-              Featured project
-            </label>
-          </div>
-
-          <div class="checkbox-row">
-            <label>
-              <input type="checkbox" id="project-published" checked />
+              <input type="checkbox" id="testimonial-published" checked />
               Published on portfolio
             </label>
           </div>
 
-          <button type="submit">Save Project</button>
+          <button type="submit">Save Testimonial</button>
 
           <button
             type="button"
-            id="cancel-edit-button"
+            id="cancel-testimonial-edit-button"
             class="secondary-button"
             style="display: none;"
           >
@@ -138,11 +116,11 @@
         </form>
       </section>
 
-      <!-- EXISTING PROJECTS -->
+      <!-- EXISTING TESTIMONIALS -->
       <section class="admin-card">
-        <h2>Existing Projects</h2>
-        <div id="projects-list">
-          <p>Loading projects...</p>
+        <h2>Existing Testimonials</h2>
+        <div id="testimonials-list">
+          <p>Loading testimonials...</p>
         </div>
       </section>
 
